@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import {StyleSheet,View} from 'react-native'
 import {Container,Content,Text, Header, Thumbnail} from 'native-base'
+import DYHeader from '../../components/DYHeader';
 
 
 export default class Profile extends Component{
@@ -8,7 +9,9 @@ export default class Profile extends Component{
         header: null
       };
 
-      
+      drawerOpen=()=>{
+        this.props.navigation.openDrawer()
+      }
      
     render(){
         let {navigation} =this.props
@@ -16,7 +19,7 @@ export default class Profile extends Component{
          
 
             <Container >
-                <Header/>
+                <DYHeader onPress={this.drawerOpen}/>
                 <Content>
                     <Text>Profile</Text>
                     <View style={{justifyContent:'center',alignItems:'center'}}>
